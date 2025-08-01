@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+  {% block navigation %}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        {% for navTab in navTab %}
+          {% if navTab == 'Dashboard' %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">{{navTab}}</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{navTab}}">{{navTab}}</a>
+            </li>
+            
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      <div class="d-flex justify-content-between items-center">
+        <h1>Customers</h1>
+        <button onclick="addUser()" type="button" class="btn btn-primary">
+          <span>Add Customer</span>
+        </button>
+      </div> 
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"></label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Search Customers">
+      </div>
+      <br />
+      <table id="tab" class="table table-striped">
+        <thead>
+          <tr>
+            {% for tablehead in tableHead %}
+            <th scope="col">{{tablehead}}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td><span>Scheduled</span></td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+      </table>
+    </div>
+{% endblock %}
